@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Northeast Texas Behavioral Health, PLLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+        :root {
+            --cream: #FAF8F5;
+            --linen: #F3F0EB;
+            --blush: #E8DDD6;
+            --dusty-blue: #7B9EAE;
+            --dusty-blue-light: #A3BFC9;
+            --dusty-blue-dark: #5A7D8D;
+            --sage: #8FA68E;
+            --charcoal: #2C2C2C;
+            --warm-gray: #6B6560;
+            --stone: #9A9086;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            width: 100%;
+            padding: 1.2rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(123, 158, 174, 0.08);
+        }
+
+        .nav-logo { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo img { height: 64px; width: auto; }
+
+        .nav-links {
+            display: flex;
+            gap: 2.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--warm-gray);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--dusty-blue-dark); }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            border-radius: 1px;
+        }
+
+        /* --- THANK YOU HERO --- */
+        .thank-you {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 5vw;
+            background: linear-gradient(160deg, var(--cream) 0%, var(--blush) 40%, var(--linen) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thank-you-inner {
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .thank-you-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--dusty-blue-light), var(--sage));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            animation: scaleIn 0.6s ease forwards;
+        }
+
+        .thank-you h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--charcoal);
+            margin-bottom: 1.2rem;
+        }
+
+        .thank-you h1 em {
+            font-style: italic;
+            color: var(--dusty-blue);
+        }
+
+        .thank-you p {
+            color: var(--warm-gray);
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .thank-you-note {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            margin: 2.5rem 0;
+            text-align: left;
+        }
+
+        .thank-you-note h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .thank-you-note h3 i { color: var(--dusty-blue); }
+
+        .thank-you-note p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            background: var(--dusty-blue);
+            color: white;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 1rem 2.2rem;
+            border-radius: 100px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--dusty-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(123, 158, 174, 0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 2.5rem 5vw;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(250, 248, 245, 0.5);
+            font-size: 0.85rem;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .nav-logo img { height: 52px; }
+            .thank-you { padding: 3rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="behavioral-health.html" class="nav-logo">
+            <img src="clinic-logo.png" alt="Northeast Texas Behavioral Health">
+        </a>
+        <ul class="nav-links">
+            <li><a href="behavioral-health.html#welcome">Welcome</a></li>
+            <li><a href="behavioral-health.html#team">Our Team</a></li>
+            <li><a href="behavioral-health.html#conditions">Conditions</a></li>
+            <li><a href="behavioral-health.html#pricing">Pricing</a></li>
+            <li><a href="behavioral-health.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="thank-you">
+        <div class="thank-you-inner">
+            <div class="thank-you-icon">
+                <i class="ph ph-check"></i>
+            </div>
+            <h1>Message <em>Received</em></h1>
+            <p>Thank you for reaching out to Northeast Texas Behavioral Health. We've received your inquiry and will get back to you as soon as possible—typically within 1-2 business days.</p>
+            <p>If this is urgent, please don't hesitate to call us directly.</p>
+
+            <div class="thank-you-note">
+                <h3><i class="ph ph-phone"></i> Need to reach us sooner?</h3>
+                <p>Call or text us at <strong>(903) 782-9500</strong>. We're here to help and happy to answer any questions you may have about scheduling, insurance, or our services.</p>
+            </div>
+
+            <a href="behavioral-health.html" class="btn-primary">
+                <i class="ph ph-arrow-left"></i>
+                Back to Homepage
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Northeast Texas Behavioral Health, PLLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
